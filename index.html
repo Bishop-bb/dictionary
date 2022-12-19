@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <nav class="hide">
+        <ul>
+            <li><a href="">Dictionary</a></li>
+            <li><a href="">Translate</a></li>
+            <li><a href="">Grammer</a></li>
+        </ul>
+        <ul id="ul2">
+            <li><a href="https://wa.me/(+234)8164900271"></a><i class="fa-brands fa-whatsapp app hey"></i></li>
+            <li><a href="mailto:iyiolablessing98@gmail.com"></a><i class="fa-regular fa-envelope hey"></i></li>
+            <li><a href="https://web.facebook.com/me/"></a><i class="fa-brands fa-facebook fb hey"></i></li>
+            <li><a href="https://www.instagram.com/blessing_iyiola"></a><i class="fa-brands fa-instagram hey"></i></li>  
+                     
+        </ul>
+   </nav>
+
+    <div id="div">
+        <div id="div1">
+            <h3>Bishop's Dictionary</h3>
+            <span>make your words meaningful</span>
+        </div> 
+
+        <!-- <div id="div2">
+            
+            
+            <div id="con"><input type="text"><a href=""><i class="fa-solid fa-xmark icon"></i></a><a href=""><i class="fa-solid fa-magnifying-glass icons"></i></a></div>
+        </div> -->
+
+        
+            
+            
+            <input id="output" type="text"><button class="hide"><i id="oops" class="fa-solid fa-xmark icon"></i></button><button onclick="get()"><i class="fa-solid fa-magnifying-glass icon"></i></button>
+        <!-- <div>
+            <button></button>
+            <button></button>
+        </div> -->
+    </div>
+
+    <section id="sec2">
+
+       <h1 id="word"></h1>
+       <p class="move" id="ph"><p>
+        
+    <div>
+        <h2 id="ps1"></h2>
+        <span id="wd1"></span>
+    </div>
+
+    <div>
+        <h2 id="ps2"></h2>
+        <span id="wd2"></span>
+    </div>
+
+    <div>
+        <h2 id="ps3"></h2>
+        <span id="wd3"></span>
+    </div>
+
+    <div>
+        <h2 id="ps4"></h2>
+        <span id="wd4"></span>
+    </div>
+   
+
+    </section>
+
+
+
+    
+    <script>
+     
+    async function get(){
+    
+    let results = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${output.value}`);
+    let data = await results.json()
+   
+
+    console.log(data)
+            console.log(data[0].word)
+            document.getElementById('word').innerHTML = data[0].word
+            document.getElementById('ph').innerHTML= data[0].phonetic
+
+            console.log(data[0].meanings[0].partOfSpeech)
+            console.log(data[0].meanings[0].definitions[0].definition)
+            document.getElementById('ps1').innerHTML = data[0].meanings[0].partOfSpeech
+            document.getElementById('wd1').innerHTML = data[0].meanings[0].definitions[0].definition
+
+
+            console.log(data[0].meanings[1].partOfSpeech)
+            console.log(data[0].meanings[1].definitions[0].definition)
+            document.getElementById('ps2').innerHTML = data[0].meanings[1].partOfSpeech
+            document.getElementById('wd2').innerHTML = data[0].meanings[1].definitions[0].definition
+
+
+            console.log(data[0].meanings[2].partOfSpeech)
+            console.log(data[0].meanings[2].definitions[0].definition)
+            document.getElementById('ps3').innerHTML = data[0].meanings[2].partOfSpeech
+            document.getElementById('wd3').innerHTML = data[0].meanings[2].definitions[0].definition
+
+
+
+            console.log(data[0].meanings[3].partOfSpeech)
+            console.log(data[0].meanings[3].definitions[0].definition)
+            document.getElementById('ps4').innerHTML = data[0].meanings[3].partOfSpeech
+            document.getElementById('wd4').innerHTML = data[0].meanings[3].definitions[0].definition
+
+            console.log(title)
+
+}
+
+
+fetch('https://api.dictionaryapi.dev/api/v2/entries/en/happy')
+            .then(function(results){
+           return results.json()
+        }).then(data =>{
+            // console.log(data)
+            // console.log(data[0].word)
+            // document.getElementById('word').innerHTML = data[0].word
+
+            // console.log(data[0].meanings[0].partOfSpeech)
+            // console.log(data[0].meanings[0].definitions[0].definition)
+            // document.getElementById('ps1').innerHTML = data[0].meanings[0].partOfSpeech
+            // document.getElementById('wd1').innerHTML = data[0].meanings[0].definitions[0].definition
+
+
+            // console.log(data[0].meanings[1].partOfSpeech)
+            // console.log(data[0].meanings[1].definitions[0].definition)
+            // document.getElementById('ps2').innerHTML = data[0].meanings[1].partOfSpeech
+            // document.getElementById('wd2').innerHTML = data[0].meanings[1].definitions[0].definition
+
+
+            // console.log(data[0].meanings[2].partOfSpeech)
+            // console.log(data[0].meanings[2].definitions[0].definition)
+            // document.getElementById('ps3').innerHTML = data[0].meanings[2].partOfSpeech
+            // document.getElementById('wd3').innerHTML = data[0].meanings[2].definitions[0].definition
+
+
+
+            // console.log(data[0].meanings[3].partOfSpeech)
+            // console.log(data[0].meanings[3].definitions[0].definition)
+            // document.getElementById('ps4').innerHTML = data[0].meanings[3].partOfSpeech
+            // document.getElementById('wd4').innerHTML = data[0].meanings[3].definitions[0].definition
+
+         
+            
+           
+
+           
+            // console.log(data[0].meanings[2].partOfSpeech)
+            // console.log(data[0].meanings[2].definitions[0].definition)
+            // console.log(data)
+        // console.log(data[0].meanings[2].definitions)
+        // document.getElementById('here').innerHTML = data[0].meanings[0].partOfSpeech;
+        // document.getElementById('number').innerHTML = "1.";
+        // document.getElementById('word').innerHTML = data[0].meanings[2].definitions[1].definition;
+            // console.log(data[0].meanings[2].definitions[0].definition)
+            // document.getElementById('word').innerHTML = "1." + " " + data[0].meanings[2].definitions[0].definition
+        // document.getElementById('here').innerHTML = data[0].meanings[2].definitions[0].definition + "</br>" + data[0].meanings[2].definitions[1].definition
+    })
+    // let output = document.getElementById('output').value 
+    let output = document.querySelector('#output') 
+    // output = output
+    // function get(){
+    //     console.log(output.value)
+    // }
+    </script>
+</body>
+</html>
