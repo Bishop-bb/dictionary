@@ -25,6 +25,7 @@
    </nav>
 
     <div id="div">
+        <div id="demo"></div>
         <div id="div1">
             <h3>Bishop's Dictionary</h3>
             <span>make your words meaningful</span>
@@ -78,6 +79,15 @@
 
     
     <script>
+        setInterval(()=>{
+    let todate= new Date();
+    let hours = todate.getHours();
+    let minutes = todate.getMinutes(); 
+    let seconds= todate.getSeconds()
+    document.getElementById('demo').innerHTML=`${hours}: ${minutes} : ${seconds}`;
+
+
+}, 1000)
      
     async function get(){
     
